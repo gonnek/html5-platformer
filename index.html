@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jump and Run Game</title>
+    <style>
+    body {
+padding: 0;
+margin: 0;
+    }
+        canvas {
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <style>
+    body{
+        background-image: url(sprites/background/background.webp);
+        background-size: cover;
+        overflow: hidden;
+    }
+
+    .cloud1{
+        background-image: url(sprites/background/clouds/cloud182x96.png);
+        background-size: cover;
+        width: 182px;
+        height: 96px;
+        position: absolute;
+        top: 30%;
+        animation: cloudanim1  20s linear infinite;
+        animation-duration: 80s;
+        animation-delay: -30s;
+        z-index: -5;
+    }
+
+    .cloud2{
+        background-image: url(sprites/background/clouds/cloud96x32.png);
+        background-size: cover;
+        width: 96px;
+        height: 32px;
+        position: absolute;
+        top: 52%;
+        animation: cloudanim1  20s linear infinite;
+        animation-duration: 160s;
+        z-index: -5;
+    }
+
+    @keyframes cloudanim1 {
+    from {
+        left: 0px;
+    margin-left: -200px;}
+    to {
+        left: 100%;
+    margin-left: 100px;}
+    }
+    
+    </style>
+
+    <div class="cloud2"></div>
+    <div class="cloud2"></div>
+    <div class="cloud1"></div>
+    <canvas id="gameCanvas" ></canvas>
+    <script src="sprites.js"></script>
+    <script src="sound.js"></script>
+    <script src="player.js"></script>
+    <script src="controls.js"></script>
+    <script src="player-movement.js"></script>
+    <script src="camera.js"></script>
+    <script src="collisions.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
